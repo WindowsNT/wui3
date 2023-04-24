@@ -1,0 +1,8 @@
+//
+
+
+#define usm_cid  L"{A8E28868-EC24-41E8-A365-C97ADF89AAAA}"
+#define DIALOGID_NONE 0
+#define DIALOGID_ASKTEXT 1
+#define DIALOGID_MESSAGE1 2
+#define DIALOGID_MAX 3

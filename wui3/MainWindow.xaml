@@ -1,0 +1,43 @@
+<!-- Copyright (c) Microsoft Corporation and Contributors. -->
+<!-- Licensed under the MIT License. -->
+
+<Window
+    x:Class="wui3.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:wui3"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Dark" KeyDown="KeyD2">
+
+        <!-- Ask Text -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="AskText" Visibility="Collapsed" SizeChanged="szch" Width="500">
+            <StackPanel MinWidth="500">
+                <InfoBar Name="AskText_Question" IsOpen="True"  Severity="Informational"  Title=""  IsIconVisible="False"  IsClosable="False"  Message="" />
+                <TextBox Name="AskText_Response" Margin="15" Text="" KeyDown="KeyD"/>
+                <StackPanel Orientation="Horizontal" Margin="15" HorizontalAlignment="Right">
+                    <Button Content=""  Margin="0,0,0,5" Name="AskText_OK"    Click="AskText_ClickOK" Style="{ThemeResource AccentButtonStyle}"  />
+                    <Button Content="" Margin="15,0,0,5" Name="AskText_Cancel" Click="AskText_ClickCancel" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+
+        <!-- Message -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="Message1" Visibility="Collapsed" SizeChanged="szch" Width="500">
+            <StackPanel MinWidth="500">
+                <InfoBar MinHeight="100" Name="Message1_Question" IsOpen="True"  Severity="Informational"  Title=""  IsIconVisible="False"  IsClosable="False"  Message="" />
+                <StackPanel Orientation="Horizontal" Margin="15" HorizontalAlignment="Left">
+                    <Button Content=""  Margin="0,0,0,5" Name="Message1_OK"    Click="AskText_ClickCancel" Style="{ThemeResource AccentButtonStyle}"  />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+    
+    </StackPanel>
+    
+
+</Window>

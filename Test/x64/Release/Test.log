@@ -1,0 +1,6 @@
+﻿  Test.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 204 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Test.vcxproj -> F:\wui3\wui3\x64\Release\Test.exe

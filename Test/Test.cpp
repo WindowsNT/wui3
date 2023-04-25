@@ -94,7 +94,7 @@ int __stdcall WinMain(HINSTANCE,HINSTANCE,LPSTR,int)
 			unsigned long long first = (unsigned long long)hwnd;
 			u.Initialize();
 			u.WriteData((char*)&first, 8, 0);
-			Run(L"..\\wui3\\x64\\debug\\wui3\\wui3.exe", false, 0);
+			Run(L"..\\..\\wui3\\x64\\debug\\wui3\\wui3.exe", false, 0);
 
 			return S_FALSE;
 		}

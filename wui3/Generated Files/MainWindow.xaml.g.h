@@ -26,13 +26,31 @@ namespace winrt::wui3::implementation
         void UnloadObject(::winrt::Microsoft::UI::Xaml::DependencyObject const& dependencyObject);
         void DisconnectUnloadedObject(int32_t connectionId);
 
-        ::winrt::Microsoft::UI::Xaml::Controls::Button myButton()
+        ::winrt::Microsoft::UI::Xaml::Controls::StackPanel rsp2()
         {
-            return _myButton;
+            return _rsp2;
         }
-        void myButton(::winrt::Microsoft::UI::Xaml::Controls::Button value)
+        void rsp2(::winrt::Microsoft::UI::Xaml::Controls::StackPanel value)
         {
-            _myButton = value;
+            _rsp2 = value;
+        }
+
+        ::winrt::Microsoft::UI::Xaml::Controls::InfoBar Message1_Question()
+        {
+            return _Message1_Question;
+        }
+        void Message1_Question(::winrt::Microsoft::UI::Xaml::Controls::InfoBar value)
+        {
+            _Message1_Question = value;
+        }
+
+        ::winrt::Microsoft::UI::Xaml::Controls::Button MyButton()
+        {
+            return _MyButton;
+        }
+        void MyButton(::winrt::Microsoft::UI::Xaml::Controls::Button value)
+        {
+            _MyButton = value;
         }
         
     protected:
@@ -41,7 +59,9 @@ namespace winrt::wui3::implementation
     private:
         struct MainWindow_obj1_Bindings;
 
-        ::winrt::Microsoft::UI::Xaml::Controls::Button _myButton{nullptr};
+        ::winrt::Microsoft::UI::Xaml::Controls::StackPanel _rsp2{nullptr};
+        ::winrt::Microsoft::UI::Xaml::Controls::InfoBar _Message1_Question{nullptr};
+        ::winrt::Microsoft::UI::Xaml::Controls::Button _MyButton{nullptr};
     };
 }
 

@@ -2,30 +2,30 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>f:\wui3\wui3\x64\Debug\wui3\wui3.exe</FullPath>
+      <FullPath>F:\wui3\x64\Debug\wui3\wui3.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles>
     <ContentFile>
-      <FullPath>f:\wui3\wui3\Assets\LockScreenLogo.scale-200.png</FullPath>
+      <FullPath>F:\wui3\wui3\Assets\LockScreenLogo.scale-200.png</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>f:\wui3\wui3\Assets\SplashScreen.scale-200.png</FullPath>
+      <FullPath>F:\wui3\wui3\Assets\SplashScreen.scale-200.png</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>f:\wui3\wui3\Assets\Square150x150Logo.scale-200.png</FullPath>
+      <FullPath>F:\wui3\wui3\Assets\Square150x150Logo.scale-200.png</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>f:\wui3\wui3\Assets\Square44x44Logo.scale-200.png</FullPath>
+      <FullPath>F:\wui3\wui3\Assets\Square44x44Logo.scale-200.png</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>f:\wui3\wui3\Assets\Square44x44Logo.targetsize-24_altform-unplated.png</FullPath>
+      <FullPath>F:\wui3\wui3\Assets\Square44x44Logo.targetsize-24_altform-unplated.png</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>f:\wui3\wui3\Assets\StoreLogo.png</FullPath>
+      <FullPath>F:\wui3\wui3\Assets\StoreLogo.png</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>f:\wui3\wui3\Assets\Wide310x150Logo.scale-200.png</FullPath>
+      <FullPath>F:\wui3\wui3\Assets\Wide310x150Logo.scale-200.png</FullPath>
     </ContentFile>
   </ContentFiles>
   <SatelliteDlls />

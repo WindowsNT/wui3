@@ -10,8 +10,16 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" >Button</Button>
-        <TextBox Margin="0,15,0,0" />
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Dark" MinWidth="500">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="rsp2" MinWidth="500">
+            <StackPanel MinWidth="500">
+                <InfoBar MinHeight="100" Name="Message1_Question" IsOpen="True"  Severity="Informational"  Title="Title"  IsIconVisible="False"  IsClosable="False"  Message="Message" />
+                <StackPanel Orientation="Horizontal" Margin="15" HorizontalAlignment="Left">
+                    <Button Content="OK"  Margin="0,0,0,5" Name="MyButton"    Style="{ThemeResource AccentButtonStyle}"  />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
     </StackPanel>
+
 </Window>

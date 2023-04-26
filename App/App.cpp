@@ -54,6 +54,8 @@ using namespace Microsoft::UI::Xaml;
 using namespace winrt;
 using namespace Microsoft::UI::Xaml;
 
+#pragma comment(lib,"uxtheme.lib")
+
 LRESULT CALLBACK NEWP(HWND hh, UINT mm, WPARAM ww, LPARAM ll);
 WNDPROC old = 0;
 struct MyW : public Window
@@ -62,6 +64,48 @@ struct MyW : public Window
 	HWND hwnd = 0;
 
 
+	BOOL CenterWindow(HWND hwndWindow)
+	{
+		RECT rectWindow = {}, rectParent = {};
+
+		rectParent.right = GetSystemMetrics(SM_CXSCREEN);
+		rectParent.bottom = GetSystemMetrics(SM_CYSCREEN);
+
+		// make the window relative to its parent
+		GetWindowRect(hwndWindow, &rectWindow);
+
+		int nWidth = rectWindow.right - rectWindow.left;
+		int nHeight = rectWindow.bottom - rectWindow.top;
+
+		int nX = ((rectParent.right - rectParent.left) - nWidth) / 2 + rectParent.left;
+		int nY = ((rectParent.bottom - rectParent.top) - nHeight) / 2 + rectParent.top;
+
+		int nScreenWidth = GetSystemMetrics(SM_CXSCREEN);
+		int nScreenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+		// make sure that the dialog box never moves outside of the screen
+		if (nX < 0) nX = 0;
+		if (nY < 0) nY = 0;
+		if (nX + nWidth > nScreenWidth) nX = nScreenWidth - nWidth;
+		if (nY + nHeight > nScreenHeight) nY = nScreenHeight - nHeight;
+
+		MoveWindow(hwndWindow, nX, nY, nWidth, nHeight, FALSE);
+
+		return TRUE;
+	}
+
+	void OnChangeSize(winrt::Windows::Foundation::IInspectable const& sender, bool f)
+	{
+		auto dlg = sender.as<winrt::Microsoft::UI::Xaml::Controls::StackPanel>();
+		auto strn = dlg.Name();
+		float xy = GetDpiForWindow(hwnd) / 96.0f;
+		auto wi5 = dlg.ActualWidth() * xy;
+		auto he5 = dlg.ActualHeight() * xy;
+		wi5 += GetThemeSysSize(0, SM_CXBORDER);
+		he5 += GetSystemMetrics(SM_CYCAPTION) + GetSystemMetrics(SM_CYSIZEFRAME) + GetSystemMetrics(SM_CYEDGE) * 2;
+		SetWindowPos(hwnd, 0, 0, 0, (int)wi5, (int)he5, SWP_SHOWWINDOW | SWP_NOMOVE);
+		CenterWindow(hwnd);
+	}
 
 	void Sub()
 	{
@@ -76,10 +120,16 @@ struct MyW : public Window
 
 		// Other Stuff
 		Panel p = Content().as<Panel>();
-		p.FindName(L"myButton").as<Button>().Click([&](IInspectable const&, RoutedEventArgs const&)
+		p.FindName(L"MyButton").as<Button>().Click([&](IInspectable const&, RoutedEventArgs const&)
 			{
 				MessageBox(0, L"Clicked", 0, 0);
 			});
+
+		Panel sp = p.FindName(L"rsp2").as<Panel>();
+			sp.SizeChanged([&](winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::Foundation::IInspectable)
+				{
+					OnChangeSize(sender, false);
+				});
 	}
 };
 
@@ -226,5 +276,5 @@ int __stdcall WinMain(HINSTANCE,HINSTANCE,LPSTR,int)
 	Application::Start([&](auto&&) {
 		app3;
 		});
-
+	return 0;
 }

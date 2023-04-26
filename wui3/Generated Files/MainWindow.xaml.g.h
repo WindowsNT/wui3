@@ -26,76 +26,13 @@ namespace winrt::wui3::implementation
         void UnloadObject(::winrt::Microsoft::UI::Xaml::DependencyObject const& dependencyObject);
         void DisconnectUnloadedObject(int32_t connectionId);
 
-        ::winrt::Microsoft::UI::Xaml::Controls::StackPanel AskText()
+        ::winrt::Microsoft::UI::Xaml::Controls::Button myButton()
         {
-            return _AskText;
+            return _myButton;
         }
-        void AskText(::winrt::Microsoft::UI::Xaml::Controls::StackPanel value)
+        void myButton(::winrt::Microsoft::UI::Xaml::Controls::Button value)
         {
-            _AskText = value;
-        }
-
-        ::winrt::Microsoft::UI::Xaml::Controls::StackPanel Message1()
-        {
-            return _Message1;
-        }
-        void Message1(::winrt::Microsoft::UI::Xaml::Controls::StackPanel value)
-        {
-            _Message1 = value;
-        }
-
-        ::winrt::Microsoft::UI::Xaml::Controls::InfoBar Message1_Question()
-        {
-            return _Message1_Question;
-        }
-        void Message1_Question(::winrt::Microsoft::UI::Xaml::Controls::InfoBar value)
-        {
-            _Message1_Question = value;
-        }
-
-        ::winrt::Microsoft::UI::Xaml::Controls::Button Message1_OK()
-        {
-            return _Message1_OK;
-        }
-        void Message1_OK(::winrt::Microsoft::UI::Xaml::Controls::Button value)
-        {
-            _Message1_OK = value;
-        }
-
-        ::winrt::Microsoft::UI::Xaml::Controls::InfoBar AskText_Question()
-        {
-            return _AskText_Question;
-        }
-        void AskText_Question(::winrt::Microsoft::UI::Xaml::Controls::InfoBar value)
-        {
-            _AskText_Question = value;
-        }
-
-        ::winrt::Microsoft::UI::Xaml::Controls::TextBox AskText_Response()
-        {
-            return _AskText_Response;
-        }
-        void AskText_Response(::winrt::Microsoft::UI::Xaml::Controls::TextBox value)
-        {
-            _AskText_Response = value;
-        }
-
-        ::winrt::Microsoft::UI::Xaml::Controls::Button AskText_OK()
-        {
-            return _AskText_OK;
-        }
-        void AskText_OK(::winrt::Microsoft::UI::Xaml::Controls::Button value)
-        {
-            _AskText_OK = value;
-        }
-
-        ::winrt::Microsoft::UI::Xaml::Controls::Button AskText_Cancel()
-        {
-            return _AskText_Cancel;
-        }
-        void AskText_Cancel(::winrt::Microsoft::UI::Xaml::Controls::Button value)
-        {
-            _AskText_Cancel = value;
+            _myButton = value;
         }
         
     protected:
@@ -104,14 +41,7 @@ namespace winrt::wui3::implementation
     private:
         struct MainWindow_obj1_Bindings;
 
-        ::winrt::Microsoft::UI::Xaml::Controls::StackPanel _AskText{nullptr};
-        ::winrt::Microsoft::UI::Xaml::Controls::StackPanel _Message1{nullptr};
-        ::winrt::Microsoft::UI::Xaml::Controls::InfoBar _Message1_Question{nullptr};
-        ::winrt::Microsoft::UI::Xaml::Controls::Button _Message1_OK{nullptr};
-        ::winrt::Microsoft::UI::Xaml::Controls::InfoBar _AskText_Question{nullptr};
-        ::winrt::Microsoft::UI::Xaml::Controls::TextBox _AskText_Response{nullptr};
-        ::winrt::Microsoft::UI::Xaml::Controls::Button _AskText_OK{nullptr};
-        ::winrt::Microsoft::UI::Xaml::Controls::Button _AskText_Cancel{nullptr};
+        ::winrt::Microsoft::UI::Xaml::Controls::Button _myButton{nullptr};
     };
 }
 

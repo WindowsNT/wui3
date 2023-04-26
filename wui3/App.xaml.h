@@ -12,8 +12,8 @@ namespace winrt::wui3::implementation
         App();
 
         void OnLaunched(Microsoft::UI::Xaml::LaunchActivatedEventArgs const&);
-        winrt::Microsoft::UI::Xaml::Window window{ nullptr };
 
     private:
+        winrt::Microsoft::UI::Xaml::Window window{ nullptr };
     };
 }

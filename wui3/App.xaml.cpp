@@ -41,35 +41,8 @@ App::App()
 /// Invoked when the application is launched.
 /// </summary>
 /// <param name="e">Details about the launch request and process.</param>
-/// 
-
-void tx(App* app)
-{
-    if (!app)
-        return;
-    auto w = app->window.as<winrt::wui3::implementation::MainWindow>();
-    w->Run();
-}
-
 void App::OnLaunched(LaunchActivatedEventArgs const&)
 {
-    auto ew = make<MainWindow>();
-    window = ew;
+    window = make<MainWindow>();
     window.Activate();
-    if (window)
-    {
-        auto n = window.as<IWindowNative>();
-        if (n)
-        {
-            n->get_WindowHandle(&mw);
-            if (mw)
-            {
-                ShowWindow(mw, SW_HIDE);
-                auto ew2 = window.as<MainWindow>();
-                ew2->Subclass();
-                std::thread t(tx, this);
-                t.detach();
-            }
-        }
-    }
 }

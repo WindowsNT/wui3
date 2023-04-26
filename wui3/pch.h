@@ -6,7 +6,6 @@
 #include <unknwn.h>
 #include <restrictederrorinfo.h>
 #include <hstring.h>
-#include <uxtheme.h>
 
 // Undefine GetCurrentTime macro to prevent
 // conflict with Storyboard::GetCurrentTime
@@ -27,11 +26,3 @@
 #include <winrt/Microsoft.UI.Xaml.Shapes.h>
 #include <winrt/Microsoft.UI.Dispatching.h>
 #include <wil/cppwinrt_helpers.h>
-#include <microsoft.ui.xaml.window.h>
-#include <winrt/Windows.UI.Xaml.Input.h>
-#include <winrt/Microsoft.UI.Input.h>
-#include <winrt/Microsoft.UI.Xaml.Input.h>
-
-
-#include "..\\xml3all.h"
-#pragma warning(disable:4100)
